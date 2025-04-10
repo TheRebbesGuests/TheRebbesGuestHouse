@@ -76,15 +76,12 @@
       <label for="phone">Phone *</label>
       <input type="tel" id="phone" name="Phone" required>
 
-      <label>Choose Your Stay *</label>
-      <select name="Stay" required>
-        <option value="">Select one</option>
-        <option value="The Union House (1850$ A Night)">The Union House (1850$ A Night)</option>
-        <option value="Lincoln #32 (1850$ A Night)">Lincoln #32 (1850$ A Night)</option>
-        <option value="Lincoln #34 (1850$ A Night)">Lincoln #34 (1850$ A Night)</option>
-        <option value="Transportation">Transportation</option>
-        <option value="Union House Basement (400$)">Union House Basement (400$)</option>
-      </select>
+      <label>Choose Your Stay *</label><br>
+<input type="checkbox" name="Stay[]" value="The Union House (1850$ A Night)"> The Union House (1850$ A Night)<br>
+<input type="checkbox" name="Stay[]" value="Lincoln #42 (1850$ A Night)"> Lincoln #32 (1850$ A Night)<br>
+<input type="checkbox" name="Stay[]" value="Lincoln #44 (1850$ A Night)"> Lincoln #34 (1850$ A Night)<br>
+<input type="checkbox" name="Stay[]" value="Transportation"> Transportation<br>
+<input type="checkbox" name="Stay[]" value="Union House Basement (400$)"> Union House Basement (400$)<br>
 
       <label for="checkin">Check In *</label>
       <input type="date" id="checkin" name="Check In" required>
