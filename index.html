@@ -55,13 +55,33 @@
       padding: 50px 20px;
       text-align: center;
     }
-    .service-columns {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 30px;
-    }
+   .service-columns {
+  display: grid;
+  gap: 30px;
+}
+
+@media (min-width: 1280px) {
+  .service-columns {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .service-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .service-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service {
+  text-align: center;
+}
+
     .service {
       max-width: 300px;
     }
