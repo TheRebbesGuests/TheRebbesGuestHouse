@@ -37,12 +37,30 @@
       margin-top: 15px;
       font-weight: bold;
     }
-    input, select, textarea {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    textarea {
       padding: 10px;
       font-size: 16px;
       margin-top: 5px;
       border-radius: 6px;
       border: 1px solid #ccc;
+    }
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 10px 0;
+    }
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      font-weight: normal;
+    }
+    .checkbox-group input[type="checkbox"] {
+      margin-right: 10px;
     }
     button {
       margin-top: 25px;
@@ -76,12 +94,14 @@
       <label for="phone">Phone *</label>
       <input type="tel" id="phone" name="Phone" required>
 
-      <label>Choose Your Stay *</label><br>
-<input type="checkbox" name="Stay[]" value="The Union House (1850$ A Night)"> The Union House (1850$ A Night)<br>
-<input type="checkbox" name="Stay[]" value="Lincoln #42 (1850$ A Night)"> Lincoln #32 (1850$ A Night)<br>
-<input type="checkbox" name="Stay[]" value="Lincoln #44 (1850$ A Night)"> Lincoln #34 (1850$ A Night)<br>
-<input type="checkbox" name="Stay[]" value="Transportation"> Transportation<br>
-<input type="checkbox" name="Stay[]" value="Union House Basement (400$)"> Union House Basement (400$)<br>
+      <label>Choose Your Stay *</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="Stay[]" value="The Union House (1850$ A Night)">The Union House (1850$ A Night)</label>
+        <label><input type="checkbox" name="Stay[]" value="Lincoln #32 (1850$ A Night)">Lincoln #32 (1850$ A Night)</label>
+        <label><input type="checkbox" name="Stay[]" value="Lincoln #34 (1850$ A Night)">Lincoln #34 (1850$ A Night)</label>
+        <label><input type="checkbox" name="Stay[]" value="Transportation">Transportation</label>
+        <label><input type="checkbox" name="Stay[]" value="Union House Basement (400$)">Union House Basement (400$)</label>
+      </div>
 
       <label for="checkin">Check In *</label>
       <input type="date" id="checkin" name="Check In" required>
