@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Your Stay – The Rebbe's Guesthouse</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('brick-wall.jpg') center/cover no-repeat fixed;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .form-container {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 500px;
+      margin: 40px 20px;
+      width: 100%;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    h1 {
+      text-align: center;
+      font-family: 'Fraunces', serif;
+      font-weight: 200;
+      font-size: 36px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 25px;
+      padding: 12px;
+      background-color: #000;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #333;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,200&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="form-container">
+    <h1>Book Your Stay</h1>
+    <form action="https://formsubmit.co/Therebbesguesthouse@gmail.com" method="POST">
+      <label for="first-name">First name *</label>
+      <input type="text" id="first-name" name="First Name" required>
+
+      <label for="last-name">Last name *</label>
+      <input type="text" id="last-name" name="Last Name" required>
+
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="Email" required>
+
+      <label for="phone">Phone *</label>
+      <input type="tel" id="phone" name="Phone" required>
+
+      <label>Choose Your Stay *</label>
+      <select name="Stay" required>
+        <option value="">Select one</option>
+        <option value="The Union House (1850$ A Night)">The Union House (1850$ A Night)</option>
+        <option value="Lincoln #32 (1850$ A Night)">Lincoln #32 (1850$ A Night)</option>
+        <option value="Lincoln #34 (1850$ A Night)">Lincoln #34 (1850$ A Night)</option>
+        <option value="Transportation">Transportation</option>
+        <option value="Union House Basement (400$)">Union House Basement (400$)</option>
+      </select>
+
+      <label for="checkin">Check In *</label>
+      <input type="date" id="checkin" name="Check In" required>
+
+      <label for="checkout">Check Out *</label>
+      <input type="date" id="checkout" name="Check Out" required>
+
+      <label for="requests">Special Requests</label>
+      <textarea id="requests" name="Special Requests" rows="4"></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
+Add booking page
