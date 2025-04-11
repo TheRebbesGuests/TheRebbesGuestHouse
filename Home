@@ -32,12 +32,17 @@
       padding: 0;
       background-color: #fff;
     }
-    header {
-      background: url('brick-wall.jpg') center/cover no-repeat;
-      padding: 100px 20px;
-      color: #000;
-      text-align: center;
-    }
+    header.hero-cover {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+  background: url('brick-wall.jpg') center/cover no-repeat fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
     .overlay {
       background: rgba(255, 255, 255, 0.75);
       backdrop-filter: blur(10px);
