@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><link rel="icon" href="favicon.png" type="image/png">
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Book Your Stay – The Rebbe's Guesthouse</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,200&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,200;300;400;600&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Fraunces', serif;
@@ -16,25 +15,80 @@
 
     .top-header {
       background-color: white;
-      padding: 15px 30px;
+      padding: 15px 25px;
       display: flex;
       align-items: center;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      justify-content: space-between;
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     }
 
-    .top-header .logo {
-      font-weight: bold;
-      font-family: 'Fraunces', serif;
-      font-size: 18px;
+    .logo {
+      font-weight: 600;
+      font-size: 20px;
       color: black;
       text-decoration: none;
+      position: relative;
     }
 
-    .top-header .logo:hover {
-      text-decoration: underline;
+    .logo::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: black;
+      transition: width 0.3s ease;
+    }
+
+    .logo:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      font-size: 28px;
+      cursor: pointer;
+      display: block;
+      background: none;
+      border: none;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      background-color: #fff;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      border-radius: 12px;
+      padding: 15px 25px;
+      min-width: 180px;
+      animation: dropdownFade 0.3s ease;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #222;
+      font-size: 16px;
+      margin: 8px 0;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #555;
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    @keyframes dropdownFade {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .form-container {
@@ -111,17 +165,27 @@
   </style>
 </head>
 <body>
-
   <nav class="top-header">
     <a href="index.html" class="logo">The Rebbe’s GuestHouse</a>
+    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#contact">Contact</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="union.html">The Union House</a>
+      <a href="lincoln32.html">Lincoln #42</a>
+      <a href="lincoln34.html">Lincoln #44</a>
+      <a href="transportation.html">Transportation</a>
+      <a href="booking.html">Book Now</a>
+    </div>
   </nav>
 
   <div class="form-container">
     <h1>Book Your Stay</h1>
     <form action="https://usebasin.com/f/c6e0109d8b37" method="POST">
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="https://therebbesguests.github.io/TheRebbesGuestHouse/thankyou.html">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://therebbesguests.github.io/TheRebbesGuestHouse/thankyou.html">
 
       <label for="first-name">First name *</label>
       <input type="text" id="first-name" name="First Name" required>
@@ -158,6 +222,5 @@
       <button type="submit">Submit</button>
     </form>
   </div>
-
 </body>
 </html>
