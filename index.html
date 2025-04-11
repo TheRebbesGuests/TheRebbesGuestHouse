@@ -272,6 +272,52 @@ header {
     align-items: center;
   }
 }
+.testimonials-section {
+  padding: 100px 30px;
+  background: #faf9f7;
+  text-align: center;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 40px auto 0;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 16px;
+  padding: 35px 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  font-size: 18px;
+  line-height: 1.6;
+  font-family: 'Fraunces', serif;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-card p {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.guest-name {
+  font-weight: bold;
+  color: #444;
+}
+
+@media (min-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
   </style>
 </head>
@@ -314,6 +360,23 @@ header {
       </a>
     </div>
   </section>
+  <section class="testimonials-section">
+  <h2 class="property-section-title">What Guests Say</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card fade-in">
+      <p>“From the soft beds to the uplifting atmosphere — every detail was perfect for Shabbos.”</p>
+      <div class="guest-name">– Sara R.</div>
+    </div>
+    <div class="testimonial-card fade-in">
+      <p>“We felt embraced by the Crown Heights spirit. Thank you for making it easy to come back.”</p>
+      <div class="guest-name">– Mendy L.</div>
+    </div>
+    <div class="testimonial-card fade-in">
+      <p>“Clean, beautiful, and infused with Chassidishe warmth. We’re recommending it to all our friends.”</p>
+      <div class="guest-name">– Rachel D.</div>
+    </div>
+  </div>
+</section>
 </section>
  <section class="contact-section" id="contact">
    <h2 class="property-section-title">Contact Us</h2>
