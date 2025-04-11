@@ -5,16 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Book Your Stay – The Rebbe’s Guesthouse</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,200;300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Fraunces', serif;
       margin: 0;
       padding: 0;
       background: url('brick-wall.jpg') center/cover no-repeat fixed;
+      font-family: 'Inter', sans-serif;
+      color: #222;
     }
 
-    /* Header */
+    /* HEADER */
     .top-header {
       background-color: white;
       padding: 15px 25px;
@@ -28,6 +33,7 @@
     }
 
     .logo {
+      font-family: 'Fraunces', serif;
       font-weight: 600;
       font-size: 20px;
       color: black;
@@ -53,6 +59,7 @@
     .menu-toggle {
       font-size: 28px;
       cursor: pointer;
+      display: block;
       background: none;
       border: none;
     }
@@ -68,6 +75,7 @@
       border-radius: 12px;
       padding: 15px 25px;
       min-width: 180px;
+      animation: dropdownFade 0.3s ease;
     }
 
     .nav-links a {
@@ -86,26 +94,25 @@
       display: flex;
     }
 
-    /* Form Styling */
-    .form-section {
-      padding: 100px 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    @keyframes dropdownFade {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
+    /* FORM */
     .form-container {
       background: rgba(255, 255, 255, 0.95);
       padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
       max-width: 600px;
-      width: 100%;
+      margin: 80px auto;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     }
 
     .form-container h1 {
-      font-size: 36px;
+      font-family: 'Fraunces', serif;
       text-align: center;
+      font-size: 36px;
       margin-bottom: 30px;
     }
 
@@ -120,22 +127,36 @@
       margin-bottom: 5px;
     }
 
-    input, textarea {
-      padding: 12px;
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    textarea {
+      padding: 12px 15px;
       font-size: 16px;
+      border-radius: 10px;
       border: 1px solid #ccc;
-      border-radius: 8px;
-      font-family: 'Fraunces', serif;
+      font-family: 'Inter', sans-serif;
+    }
+
+    textarea {
+      resize: vertical;
     }
 
     .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
       background: #f7f7f7;
       padding: 15px;
-      border-radius: 8px;
+      border-radius: 12px;
     }
 
     .checkbox-group label {
       font-weight: 400;
+      display: flex;
+      align-items: center;
+      font-size: 15px;
     }
 
     .checkbox-group input[type="checkbox"] {
@@ -150,24 +171,16 @@
       border: none;
       border-radius: 30px;
       cursor: pointer;
-      transition: background-color 0.3s;
-      font-family: 'Fraunces', serif;
+      transition: background 0.3s;
     }
 
     button:hover {
       background-color: #333;
     }
-
-    @media (max-width: 600px) {
-      .form-container {
-        padding: 30px 20px;
-      }
-    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <nav class="top-header">
     <a href="index.html" class="logo">The Rebbe’s GuestHouse</a>
     <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
@@ -183,65 +196,49 @@
     </div>
   </nav>
 
-  <!-- Booking Form -->
-  <section class="form-section">
-    <div class="form-container">
-      <h1>Book Your Stay</h1>
-      <form action="https://usebasin.com/f/c6e0109d8b37" method="POST">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="thankyou.html">
+  <div class="form-container">
+    <h1>Book Your Stay</h1>
+    <form action="https://usebasin.com/f/c6e0109d8b37" method="POST">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="thankyou.html">
 
-        <div>
-          <label for="first-name">First Name *</label>
-          <input type="text" id="first-name" name="First Name" required>
-        </div>
+      <label for="first-name">First Name *</label>
+      <input type="text" id="first-name" name="First Name" required>
 
-        <div>
-          <label for="last-name">Last Name *</label>
-          <input type="text" id="last-name" name="Last Name" required>
-        </div>
+      <label for="last-name">Last Name *</label>
+      <input type="text" id="last-name" name="Last Name" required>
 
-        <div>
-          <label for="email">Email *</label>
-          <input type="email" id="email" name="Email" required>
-        </div>
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="Email" required>
 
-        <div>
-          <label for="phone">Phone *</label>
-          <input type="tel" id="phone" name="Phone" required>
-        </div>
+      <label for="phone">Phone *</label>
+      <input type="tel" id="phone" name="Phone" required>
 
-        <div class="checkbox-group">
-          <label><strong>Choose Your Stay *</strong></label>
-          <label><input type="checkbox" name="Stay[]" value="The Union House (1850$ A Night)">The Union House (1850$ A Night)</label>
-          <label><input type="checkbox" name="Stay[]" value="Lincoln #42 (1850$ A Night)">Lincoln #42 (1850$ A Night)</label>
-          <label><input type="checkbox" name="Stay[]" value="Lincoln #44 (1850$ A Night)">Lincoln #44 (1850$ A Night)</label>
-          <label><input type="checkbox" name="Stay[]" value="Transportation">Transportation</label>
-          <label><input type="checkbox" name="Stay[]" value="The Union House Basement (400$)">The Union House Basement (400$)</label>
-          <label><input type="checkbox" name="Stay[]" value="Lincoln #42 Basement (400$)">Lincoln #42 Basement (400$)</label>
-          <label><input type="checkbox" name="Stay[]" value="Lincoln #44 Basement (400$)">Lincoln #44 Basement (400$)</label>
-        </div>
+      <label>Choose Your Stay *</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="Stay[]" value="The Union House (1850$ A Night)"> The Union House (1850$ A Night)</label>
+        <label><input type="checkbox" name="Stay[]" value="Lincoln #42 (1850$ A Night)"> Lincoln #42 (1850$ A Night)</label>
+        <label><input type="checkbox" name="Stay[]" value="Lincoln #44 (1850$ A Night)"> Lincoln #44 (1850$ A Night)</label>
+        <label><input type="checkbox" name="Stay[]" value="Transportation"> Transportation</label>
+        <label><input type="checkbox" name="Stay[]" value="The Union House Basement (400$)"> The Union House Basement (400$)</label>
+        <label><input type="checkbox" name="Stay[]" value="Lincoln #42 Basement (400$)"> Lincoln #42 Basement (400$)</label>
+        <label><input type="checkbox" name="Stay[]" value="Lincoln #44 Basement (400$)"> Lincoln #44 Basement (400$)</label>
+      </div>
 
-        <div>
-          <label for="checkin">Check In *</label>
-          <input type="date" id="checkin" name="Check In" required>
-        </div>
+      <label for="checkin">Check In *</label>
+      <input type="date" id="checkin" name="Check In" required>
 
-        <div>
-          <label for="checkout">Check Out *</label>
-          <input type="date" id="checkout" name="Check Out" required>
-        </div>
+      <label for="checkout">Check Out *</label>
+      <input type="date" id="checkout" name="Check Out" required>
 
-        <div>
-          <label for="requests">Special Requests</label>
-          <textarea id="requests" name="Special Requests" rows="4"></textarea>
-        </div>
+      <label for="requests">Special Requests</label>
+      <textarea id="requests" name="Special Requests" rows="4"></textarea>
 
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  </section>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 
 </body>
 </html>
+
