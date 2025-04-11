@@ -13,7 +13,6 @@
       background: url('brick-wall.jpg') center/cover no-repeat fixed;
     }
 
-    /* Modern Dropdown Header */
     .top-header {
       background-color: white;
       padding: 15px 25px;
@@ -26,7 +25,7 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     }
 
-    .top-header .logo {
+    .logo {
       font-weight: 600;
       font-size: 20px;
       color: black;
@@ -34,42 +33,46 @@
     }
 
     .menu-toggle {
-      display: none;
-      font-size: 26px;
+      font-size: 28px;
       cursor: pointer;
+      display: block;
+      background: none;
+      border: none;
     }
 
     .nav-links {
-      display: flex;
-      gap: 20px;
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      background-color: #fff;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      border-radius: 12px;
+      padding: 15px 25px;
+      min-width: 180px;
+      animation: dropdownFade 0.3s ease;
     }
 
     .nav-links a {
       text-decoration: none;
-      color: black;
+      color: #222;
       font-size: 16px;
+      margin: 8px 0;
+      transition: color 0.3s;
     }
 
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: white;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        padding: 20px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      }
+    .nav-links a:hover {
+      color: #555;
+    }
 
-      .nav-links.active {
-        display: flex;
-      }
+    .nav-links.active {
+      display: flex;
+    }
 
-      .menu-toggle {
-        display: block;
-      }
+    @keyframes dropdownFade {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .content-wrapper {
@@ -130,18 +133,19 @@
       border-radius: 12px;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
       object-fit: cover;
+      height: auto;
     }
   </style>
 </head>
 <body>
   <nav class="top-header">
     <a href="index.html" class="logo">The Rebbe’s GuestHouse</a>
-    <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</div>
+    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="#contact">Contact</a>
       <a href="#testimonials">Testimonials</a>
-      <a href="unionhouse.html">The Union House</a>
+      <a href="union.html">The Union House</a>
       <a href="lincoln32.html">Lincoln #42</a>
       <a href="lincoln34.html">Lincoln #44</a>
       <a href="transportation.html">Transportation</a>
@@ -159,9 +163,9 @@
     </div>
 
     <div class="gallery-scroll">
-      <img src="gallery1.jpg" alt="Living Room">
-      <img src="gallery2.jpg" alt="Shabbos Table">
-      <img src="gallery3.jpg" alt="Bedroom">
+      <img src="living.jpg" alt="Living Room">
+      <img src="bedroom2.jpg" alt="Shabbos Table">
+      <img src="bedroom.jpg" alt="Bedroom">
     </div>
   </section>
 </body>
