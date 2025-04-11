@@ -62,7 +62,22 @@
   cursor: pointer;
   background: none;
   border: none;
+  color: black;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  appearance: none;          /* Remove native styling in WebKit */
+  -webkit-appearance: none;  /* Safari/Chrome */
+  -moz-appearance: none;     /* Firefox */
 }
+
+.menu-toggle:focus,
+.menu-toggle:hover {
+  background: none;
+  outline: none;
+  box-shadow: none;
+}
+
 
 .nav-links {
   display: none;
