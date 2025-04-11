@@ -131,9 +131,29 @@
         grid-template-columns: 1fr;
       }
     }
-    .service {
-      max-width: 250px;
-      text-align: center;
+    .service-columns {
+  display: grid;
+  gap: 30px;
+  justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.service {
+  max-width: 250px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background: transparent;
+}
+
+.service p {
+  flex-grow: 1; /* makes sure all services take equal height for their text blocks */
+}
+
     }
     .icon {
       width: 50px;
@@ -186,7 +206,7 @@
       </svg>
       <h3>Lincoln #32</h3>
       <p>Just steps from 770, 1342 Lincoln is a spacious guesthouse that sleeps up to 25 guests. It features multiple bedrooms, a kosher kitchen, and the essentials for a relaxing Shabbos stay.</p>
-      <a href="booking.html?room=lincoln732" class="service-button">Book Lincoln 732</a>
+      <a href="booking.html?room=lincoln732" class="service-button">Book Lincoln #32</a>
     </div>
 
     <div class="service">
@@ -195,7 +215,7 @@
       </svg>
       <h3>Lincoln #34</h3>
       <p>Right next door, 1344 Lincoln offers the same welcoming setup with room for 25 guests. Ideal for large groups or families booking both homes. Fully equipped for Shabbos with a kosher kitchen.</p>
-      <a href="booking.html?room=lincoln734" class="service-button">Book Lincoln 734</a>
+      <a href="booking.html?room=lincoln734" class="service-button">Book Lincoln #34</a>
     </div>
   </div>
 </section>
