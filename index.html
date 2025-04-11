@@ -7,6 +7,16 @@
   <title>The Rebbe's Guesthouse</title>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,200&display=swap" rel="stylesheet">
   <style>
+    .fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
   .property-grid {
   display: grid;
   gap: 30px;
@@ -323,6 +333,19 @@ header {
   <footer style="background-color:#f5f5f5; padding:20px; text-align:center; font-family: 'Fraunces', serif;">
   © 2025 The Rebbe’s Guesthouse | Built with care by Nighttime Website Development
 </footer>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
+  });
+</script>
 
 </body>
 </html>
