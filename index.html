@@ -272,11 +272,34 @@ header {
     align-items: center;
   }
 }
-.testimonials-section {
-  padding: 100px 30px;
-  background: #faf9f7;
-  text-align: center;
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.92);
+  color: #000;
+  border-radius: 16px;
+  padding: 35px 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  line-height: 1.6;
+  font-family: 'Fraunces', serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(4px);
 }
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-card p {
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.guest-name {
+  font-weight: bold;
+  color: #333;
+}
+
 
 .testimonials-grid {
   display: grid;
@@ -359,8 +382,7 @@ header {
         <p>Transportation</p>
       </a>
     </div>
-  </section>
-  <section class="testimonials-section">
+ <section class="testimonials-section">
   <h2 class="property-section-title">What Guests Say</h2>
   <div class="testimonials-grid">
     <div class="testimonial-card fade-in">
