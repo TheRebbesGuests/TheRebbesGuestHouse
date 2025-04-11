@@ -49,6 +49,18 @@
   font-family: 'Fraunces', serif;
 }
 
+.top-header {
+  background-color: white;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Fraunces', serif;
+}
+
 .top-header .logo {
   font-weight: bold;
   font-size: 18px;
@@ -56,21 +68,10 @@
   text-decoration: none;
 }
 
-.nav-links a {
-  margin-left: 20px;
-  color: black;
-  text-decoration: none;
-  font-size: 16px;
+.top-header .logo:hover {
+  text-decoration: underline;
 }
 
-.nav-links a:hover {
-  text-decoration: underline;
-}.detail-section {
-  padding: 100px 30px;
-  background: url('brick-wall.jpg') center/cover no-repeat fixed;
-  display: flex;
-  justify-content: center;
-}
 
 .detail-card {
   background: rgba(0, 0, 0, 0.75);
@@ -112,6 +113,78 @@
   background: white;
   color: black;
 }
+.split-section {
+  display: flex;
+  flex-wrap: wrap;
+  background: url('brick-wall.jpg') center/cover no-repeat fixed;
+  padding: 100px 40px;
+  font-family: 'Fraunces', serif;
+  gap: 40px;
+  justify-content: center;
+}
+
+.split-text {
+  flex: 1 1 400px;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  max-width: 600px;
+}
+
+.split-text h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.split-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.split-gallery {
+  flex: 1 1 400px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 500px;
+}
+
+.split-gallery img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+  height: 200px;
+}
+
+@media (max-width: 900px) {
+  .split-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .split-gallery img {
+    height: auto;
+  }
+}
+ .nav-links {
+  margin-left: auto;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
 
 
   </style>
@@ -121,16 +194,29 @@
   <a href="index.html" class="logo">The Rebbe’s GuestHouse</a>
   <div class="nav-links">
     <a href="index.html">Home</a>
+    <a href="#contact">Contact</a>
+    <a href="#testimonials">testimonials</a>
+    <a href="unionhouse.html">The Union House</a>
+    <a href="lincoln32.html">Lincoln #42</a>
+    <a href="lincoln34.html">Lincoln #44</a>
+    <a href="transportation.html">transportation</a>
+    <a href="booking.html">Book Now</a>
   </div>
 </nav>
 
- <section class="detail-section">
-  <div class="detail-card">
-    <h1>The Union House</h1>
+<section class="split-section">
+  <div class="split-text">
+    <h1>The Union House – Full Details</h1>
     <p>The Union House is a bright and centrally located guesthouse perfect for families or large groups looking for a warm Shabbos experience. Located just a few blocks from 770, this home puts you at the heart of Crown Heights.</p>
     <p>The home includes a full kosher kitchen, Shabbos essentials, linens, towels, and more. It's designed with both comfort and community in mind.</p>
     <p><strong>Note:</strong> Please update with the exact number of bedrooms and bathrooms.</p>
-    <a href="booking.html?room=union" class="cta-button">Book Now</a>
+    <a href="booking.html" class="cta-button">Book Now</a>
+  </div>
+  
+  <div class="split-gallery">
+    <img src="gallery1.jpg" alt="Living Room" />
+    <img src="gallery2.jpg" alt="Shabbos Table" />
+    <img src="gallery3.jpg" alt="Bedroom" />
   </div>
 </section>
 </body>
