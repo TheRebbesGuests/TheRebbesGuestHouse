@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><link rel="icon" href="favicon.png" type="image/png">
-
+<head><head><link rel="icon" href="favicon.png" type="image/png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Union House – Full Details</title>
@@ -31,6 +30,22 @@
       font-size: 20px;
       color: black;
       text-decoration: none;
+      position: relative;
+    }
+
+    .logo::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: black;
+      transition: width 0.3s ease;
+    }
+
+    .logo:hover::after {
+      width: 100%;
     }
 
     .menu-toggle {
@@ -164,9 +179,9 @@
     </div>
 
     <div class="gallery-scroll">
-      <img src="living.jpg" alt="Living Room">
+      <img src="kitchen.jpg" alt="Living Room">
       <img src="bedroom2.jpg" alt="Shabbos Table">
-      <img src="bedroom.jpg" alt="Bedroom">
+      <img src="bedroom.jpg" alt="Bedroom"> <img src="gallery3.jpg" alt="Bedroom">
     </div>
   </section>
 </body>
