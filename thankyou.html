@@ -4,113 +4,93 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thank You – The Rebbe's Guesthouse</title>
-  <link rel="icon" href="favicon.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,200;300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      padding: 0;
       font-family: 'Inter', sans-serif;
-      background: url('brick-wall.jpg') center/cover no-repeat fixed;
+      background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .thankyou-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 60px 40px;
+      max-width: 600px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-size: 38px;
+      margin-bottom: 20px;
       color: #222;
     }
 
-    .top-header {
-      background-color: white;
-      padding: 15px 25px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    }
-
-    .logo {
-      font-family: 'Fraunces', serif;
-      font-weight: 600;
-      font-size: 20px;
-      color: black;
-      text-decoration: none;
-      position: relative;
-    }
-
-    .logo::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: black;
-      transition: width 0.3s ease;
-    }
-
-    .logo:hover::after {
-      width: 100%;
-    }
-
-    .thankyou-wrapper {
-      max-width: 700px;
-      margin: 100px auto;
-      background: rgba(255, 255, 255, 0.94);
-      padding: 50px 30px;
-      text-align: center;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-    }
-
-    .thankyou-wrapper h1 {
-      font-family: 'Fraunces', serif;
-      font-size: 42px;
-      margin-bottom: 20px;
-    }
-
-    .thankyou-wrapper p {
+    p {
       font-size: 18px;
-      margin-bottom: 15px;
+      color: #444;
+      margin: 12px 0;
       line-height: 1.6;
     }
 
-    .cta-button {
+    .button {
       display: inline-block;
       margin-top: 30px;
       padding: 12px 28px;
-      background: none;
-      color: black;
-      border: 1px solid black;
-      border-radius: 50px;
-      font-size: 16px;
-      font-weight: 500;
+      background-color: black;
+      color: white;
+      border-radius: 30px;
       text-decoration: none;
-      transition: all 0.3s ease;
+      font-size: 16px;
+      font-family: 'Inter', sans-serif;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
 
-    .cta-button:hover {
-      background: black;
-      color: white;
+    .button:hover {
+      background-color: #333;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 600px) {
+      .thankyou-card {
+        padding: 40px 25px;
+        margin: 20px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      p {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <nav class="top-header">
-    <a href="index.html" class="logo">The Rebbe’s GuestHouse</a>
-  </nav>
-
-  <div class="thankyou-wrapper">
+  <div class="thankyou-card">
     <h1>Thank You for Contacting Us</h1>
-    <p>This is not a guarantee of booking.</p>
-    <p>We will contact you shortly to confirm availability and finalize your stay.</p>
-    <p>If you have any questions, feel free to reach out via WhatsApp (number coming soon).</p>
-    <a href="index.html" class="cta-button">← Return to Home</a>
+    <p>This is not a confirmation of booking.</p>
+    <p>We’ll be in touch shortly to confirm availability and finalize your stay.</p>
+    <p>If you have any questions, feel free to reach out via WhatsApp.</p>
+    <a href="index.html" class="button">← Return to Home</a>
   </div>
 
 </body>
 </html>
+
 
