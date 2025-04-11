@@ -122,21 +122,23 @@
     }
 
     .property-showcase {
-      padding: 60px 20px;
+      padding: 80px 20px;
       background: url('brick-wall.jpg') center/cover no-repeat fixed;
+      text-align: center;
     }
 
-    .property-showcase h2 {
-      font-size: 36px;
+    .property-section-title {
+      font-size: 48px;
       color: white;
-      text-align: center;
-      margin-bottom: 40px;
-      font-weight: normal;
+      margin-bottom: 50px;
+      margin-top: 80px;
+      font-family: 'Fraunces', serif;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
     }
 
     .property-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 30px;
       max-width: 1000px;
       margin: 0 auto;
@@ -190,7 +192,7 @@
   </header>
 
   <section class="property-showcase">
-    <h2>Our Guesthouses</h2>
+    <div class="property-section-title">Our Guesthouses</div>
     <div class="property-grid">
       <a href="union.html" class="property-card">
         <img src="union.jpg" alt="The Union House">
@@ -204,8 +206,8 @@
         <img src="lincoln44.jpg" alt="Lincoln #44">
         <p>Lincoln #44</p>
       </a>
-       <a href="transportation.html" class="property-card">
-        <img src="taxi.jpg" alt="transportation">
+      <a href="transportation.html" class="property-card">
+        <img src="transport.jpg" alt="Transportation">
         <p>Transportation</p>
       </a>
     </div>
