@@ -19,92 +19,96 @@
       color: #222;
     }
 
-   .top-header {
-  background-color: white;
-  padding: 15px 25px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-}
+    .main-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-.logo {
-  font-weight: 600;
-  font-size: 20px;
-  color: black;
-  text-decoration: none;
-  position: relative;
-}
+    .top-header {
+      background-color: white;
+      padding: 15px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
 
-.logo::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: black;
-  transition: width 0.3s ease;
-}
+    .logo {
+      font-weight: 600;
+      font-size: 20px;
+      color: black;
+      text-decoration: none;
+      position: relative;
+      font-family: 'Fraunces', serif;
+    }
 
-.logo:hover::after {
-  width: 100%;
-}
+    .logo::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: black;
+      transition: width 0.3s ease;
+    }
 
-.menu-toggle {
-  font-size: 28px;
-  cursor: pointer;
-  background: none;
-  border: none;
-}
+    .logo:hover::after {
+      width: 100%;
+    }
 
-.nav-links {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 70px;
-  right: 20px;
-  background-color: #fff;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  border-radius: 12px;
-  padding: 15px 25px;
-  min-width: 180px;
-  animation: dropdownFade 0.3s ease;
-}
+    .menu-toggle {
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
 
-.nav-links a {
-  text-decoration: none;
-  color: #222;
-  font-size: 16px;
-  margin: 8px 0;
-  transition: color 0.3s;
-}
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      background-color: #fff;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      border-radius: 12px;
+      padding: 15px 25px;
+      min-width: 180px;
+      animation: dropdownFade 0.3s ease;
+    }
 
-.nav-links a:hover {
-  color: #555;
-}
+    .nav-links a {
+      text-decoration: none;
+      color: #222;
+      font-size: 16px;
+      margin: 8px 0;
+      transition: color 0.3s;
+    }
 
-.nav-links.active {
-  display: flex;
-}
+    .nav-links a:hover {
+      color: #555;
+    }
 
-@keyframes dropdownFade {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+    .nav-links.active {
+      display: flex;
+    }
 
+    @keyframes dropdownFade {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-
-    /* FORM */
     .form-container {
       background: rgba(255, 255, 255, 0.95);
-      padding: 40px;
+      padding: 50px;
       border-radius: 20px;
-      max-width: 600px;
-      margin: 80px auto;
+      max-width: 700px;
+      margin: 100px auto;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     }
 
@@ -179,64 +183,65 @@
   </style>
 </head>
 <body>
-
-  <nav class="top-header">
-  <a href="index.html" class="logo">The Rebbe’s GuestHouse</a>
-  <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="#contact">Contact</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="unionhouse.html">The Union House</a>
-    <a href="lincoln32.html">Lincoln #42</a>
-    <a href="lincoln34.html">Lincoln #44</a>
-    <a href="transportation.html">Transportation</a>
-    <a href="booking.html">Book Now</a>
-  </div>
-
-  <div class="form-container">
-    <h1>Book Your Stay</h1>
-    <form action="https://usebasin.com/f/c6e0109d8b37" method="POST">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="thankyou.html">
-
-      <label for="first-name">First Name *</label>
-      <input type="text" id="first-name" name="First Name" required>
-
-      <label for="last-name">Last Name *</label>
-      <input type="text" id="last-name" name="Last Name" required>
-
-      <label for="email">Email *</label>
-      <input type="email" id="email" name="Email" required>
-
-      <label for="phone">Phone *</label>
-      <input type="tel" id="phone" name="Phone" required>
-
-      <label>Choose Your Stay *</label>
-      <div class="checkbox-group">
-        <label><input type="checkbox" name="Stay[]" value="The Union House (1850$ A Night)"> The Union House (1850$ A Night)</label>
-        <label><input type="checkbox" name="Stay[]" value="Lincoln #42 (1850$ A Night)"> Lincoln #42 (1850$ A Night)</label>
-        <label><input type="checkbox" name="Stay[]" value="Lincoln #44 (1850$ A Night)"> Lincoln #44 (1850$ A Night)</label>
-        <label><input type="checkbox" name="Stay[]" value="Transportation"> Transportation</label>
-        <label><input type="checkbox" name="Stay[]" value="The Union House Basement (400$)"> The Union House Basement (400$)</label>
-        <label><input type="checkbox" name="Stay[]" value="Lincoln #42 Basement (400$)"> Lincoln #42 Basement (400$)</label>
-        <label><input type="checkbox" name="Stay[]" value="Lincoln #44 Basement (400$)"> Lincoln #44 Basement (400$)</label>
+  <div class="main-wrapper">
+    <nav class="top-header">
+      <a href="index.html" class="logo">The Rebbe’s GuestHouse</a>
+      <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="index.html#testimonials">Testimonials</a>
+        <a href="unionhouse.html">The Union House</a>
+        <a href="lincoln32.html">Lincoln #32</a>
+        <a href="lincoln34.html">Lincoln #34</a>
+        <a href="transportation.html">Transportation</a>
+        <a href="booking.html">Book Now</a>
       </div>
+    </nav>
 
-      <label for="checkin">Check In *</label>
-      <input type="date" id="checkin" name="Check In" required>
+    <div class="form-container">
+      <h1>Book Your Stay</h1>
+      <form action="https://usebasin.com/f/c6e0109d8b37" method="POST">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="thankyou.html">
 
-      <label for="checkout">Check Out *</label>
-      <input type="date" id="checkout" name="Check Out" required>
+        <label for="first-name">First Name *</label>
+        <input type="text" id="first-name" name="First Name" required>
 
-      <label for="requests">Special Requests</label>
-      <textarea id="requests" name="Special Requests" rows="4"></textarea>
+        <label for="last-name">Last Name *</label>
+        <input type="text" id="last-name" name="Last Name" required>
 
-      <button type="submit">Submit</button>
-    </form>
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="Email" required>
+
+        <label for="phone">Phone *</label>
+        <input type="tel" id="phone" name="Phone" required>
+
+        <label>Choose Your Stay *</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="Stay[]" value="The Union House (1850$ A Night)"> The Union House (1850$ A Night)</label>
+          <label><input type="checkbox" name="Stay[]" value="Lincoln #42 (1850$ A Night)"> Lincoln #32 (1850$ A Night)</label>
+          <label><input type="checkbox" name="Stay[]" value="Lincoln #44 (1850$ A Night)"> Lincoln #34 (1850$ A Night)</label>
+          <label><input type="checkbox" name="Stay[]" value="Transportation"> Transportation</label>
+          <label><input type="checkbox" name="Stay[]" value="The Union House Basement (400$)"> The Union House Basement (400$)</label>
+          <label><input type="checkbox" name="Stay[]" value="Lincoln #42 Basement (400$)"> Lincoln #42 Basement (400$)</label>
+          <label><input type="checkbox" name="Stay[]" value="Lincoln #44 Basement (400$)"> Lincoln #44 Basement (400$)</label>
+        </div>
+
+        <label for="checkin">Check In *</label>
+        <input type="date" id="checkin" name="Check In" required>
+
+        <label for="checkout">Check Out *</label>
+        <input type="date" id="checkout" name="Check Out" required>
+
+        <label for="requests">Special Requests</label>
+        <textarea id="requests" name="Special Requests" rows="4"></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   </div>
-
 </body>
 </html>
 
