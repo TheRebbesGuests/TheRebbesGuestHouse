@@ -7,6 +7,28 @@
   <title>The Rebbe's Guesthouse</title>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,200&display=swap" rel="stylesheet">
   <style>
+    .property-grid {
+  display: grid;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  grid-template-columns: 1fr; /* Mobile default: 1 column */
+}
+
+/* Tablets: 2 columns */
+@media (min-width: 600px) {
+  .property-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktops: 4 columns */
+@media (min-width: 992px) {
+  .property-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
     body {
       font-family: 'Fraunces', serif;
       font-weight: 200;
