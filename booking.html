@@ -19,82 +19,86 @@
     }
 
     /* HEADER */
-    .top-header {
-      background-color: white;
-      padding: 15px 25px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    }
+    /* === HEADER STYLING (EXACT MATCH TO INDEX) === */
+.top-header {
+  background-color: white;
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
 
-    .logo {
-      font-weight: 600;
-      font-size: 20px;
-      color: black;
-      text-decoration: none;
-      position: relative;
-    }
+.logo {
+  font-weight: 600;
+  font-size: 20px;
+  color: black;
+  text-decoration: none;
+  position: relative;
+  font-family: 'Fraunces', serif;
+}
 
-    .logo::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: black;
-      transition: width 0.3s ease;
-    }
+.logo::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: black;
+  transition: width 0.3s ease;
+}
 
-    .logo:hover::after {
-      width: 100%;
-    }
+.logo:hover::after {
+  width: 100%;
+}
 
-    .menu-toggle {
-      font-size: 28px;
-      cursor: pointer;
-      background: none;
-      border: none;
-    }
+.menu-toggle {
+  font-size: 28px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
 
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 70px;
-      right: 20px;
-      background-color: #fff;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-      border-radius: 12px;
-      padding: 15px 25px;
-      min-width: 180px;
-      animation: dropdownFade 0.3s ease;
-    }
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background-color: #fff;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 15px 25px;
+  min-width: 180px;
+  animation: dropdownFade 0.3s ease;
+}
 
-    .nav-links a {
-      text-decoration: none;
-      color: #222;
-      font-size: 16px;
-      margin: 8px 0;
-      transition: color 0.3s;
-    }
+.nav-links a {
+  text-decoration: none;
+  color: #222;
+  font-size: 16px;
+  margin: 8px 0;
+  transition: color 0.3s;
+  font-family: 'Fraunces', serif;
+}
 
-    .nav-links a:hover {
-      color: #555;
-    }
+.nav-links a:hover {
+  color: #555;
+}
 
-    .nav-links.active {
-      display: flex;
-    }
+.nav-links.active {
+  display: flex;
+}
 
-    @keyframes dropdownFade {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+@keyframes dropdownFade {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 
     /* FORM STYLING */
     .form-container {
@@ -176,22 +180,33 @@
     }
   </style>
 </head>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.remove('active');
+      });
+    });
+  });
+</script>
+
 <body>
 
-  <nav class="top-header">
-    <a href="index.html" class="logo">The Rebbe’s GuestHouse</a>
-    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="index.html#contact">Contact</a>
-      <a href="index.html#testimonials">Testimonials</a>
-      <a href="unionhouse.html">The Union House</a>
-      <a href="lincoln32.html">Lincoln #32</a>
-      <a href="lincoln34.html">Lincoln #34</a>
-      <a href="transportation.html">Transportation</a>
-      <a href="booking.html">Book Now</a>
-    </div>
-  </nav>
+ <nav class="top-header">
+  <a href="index.html" class="logo">The Rebbe’s GuestHouse</a>
+  <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="index.html#testimonials">Testimonials</a>
+    <a href="unionhouse.html">The Union House</a>
+    <a href="lincoln32.html">Lincoln #32</a>
+    <a href="lincoln34.html">Lincoln #34</a>
+    <a href="transportation.html">Transportation</a>
+    <a href="booking.html">Book Now</a>
+  </div>
+</nav>
+
 
   <div class="form-container">
     <h1>Book Your Stay</h1>
