@@ -28,13 +28,35 @@
     scroll-behavior: smooth;
   }
   /* ====== Base ====== */
-  body {
-    font-family: 'Fraunces', serif;
-    font-weight: 200;
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
+ body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: url('brick-wall.jpg') center center / cover no-repeat;
+  z-index: -1;
+  transform: scale(1.1); /* Slight zoom out */
+}
+
+@media (max-width: 768px) {
+  body::before {
+    background-position: center top;
+    background-size: cover;
+    transform: scale(1.0); /* Less zoom on mobile */
   }
+}
+
 
   h1 {
     font-size: 48px;
