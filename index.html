@@ -7,25 +7,25 @@
   <title>The Rebbe's Guesthouse</title>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,200&display=swap" rel="stylesheet">
   <style>
-    .property-grid {
+  .property-grid {
   display: grid;
   gap: 30px;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
-  grid-template-columns: 1fr; /* Mobile default: 1 column */
+  grid-template-columns: 1fr; /* Default: 1 column for mobile */
 }
 
-/* Tablets: 2 columns */
+/* Tablet: 2 columns */
 @media (min-width: 600px) {
   .property-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Desktops: 4 columns */
+/* Desktop: 4 columns */
 @media (min-width: 992px) {
   .property-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr) !important;
   }
 }
 
@@ -126,21 +126,23 @@
     }
 
     .property-showcase {
-  padding: 100px 30px 120px;
+  padding: 60px 30px 100px; /* reduce top padding */
   background: url('brick-wall.jpg') center/cover no-repeat fixed;
   text-align: center;
 }
 
 
+
     .property-section-title {
   font-size: 64px;
   color: white;
-  margin: 0 auto 60px;
+  margin: 40px auto 40px; /* reduced margin */
   font-family: 'Fraunces', serif;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-  padding-top: 40px;
+  padding-top: 0;
   position: relative;
 }
+
 
 .property-section-title::after {
   content: '';
