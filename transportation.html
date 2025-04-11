@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="icon" href="favicon.png" type="image/png" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Transportation Services – The Rebbe’s Guesthouse</title>
@@ -19,6 +19,7 @@
       color: #333;
     }
 
+    /* Header */
     .top-header {
       background-color: white;
       padding: 15px 25px;
@@ -97,13 +98,14 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* Layout */
     .content-wrapper {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      align-items: flex-start;
-      padding: 100px 30px;
+      align-items: center;
       gap: 40px;
+      padding: 100px 30px;
     }
 
     .details-box {
@@ -148,6 +150,8 @@
     .transport-image {
       flex: 1 1 400px;
       max-width: 450px;
+      display: flex;
+      justify-content: center;
     }
 
     .transport-image img {
@@ -155,6 +159,40 @@
       border-radius: 16px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
       object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .transport-image img:hover {
+      transform: scale(1.03);
+    }
+
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .content-wrapper {
+        flex-direction: column;
+        padding: 60px 20px;
+      }
+
+      .transport-image {
+        max-width: 90%;
+        margin-top: 20px;
+      }
+
+      .details-box {
+        max-width: 90%;
+      }
     }
   </style>
 </head>
@@ -177,7 +215,7 @@
   </nav>
 
   <!-- Page Content -->
-  <section class="content-wrapper">
+  <section class="content-wrapper fade-in">
     <div class="details-box">
       <h1>Transportation Services</h1>
       <p>We offer reliable, convenient transportation for our guests. Rides are available to and from JFK, LaGuardia, Newark, and to the Ohel in Queens.</p>
@@ -190,7 +228,22 @@
     </div>
   </section>
 
-  <!-- Auto-close dropdown -->
+  <!-- Scroll/fade in animation -->
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    faders.forEach(fade => observer.observe(fade));
+  </script>
+
+  <!-- Auto-close dropdown menu -->
   <script>
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
