@@ -32,10 +32,9 @@
     pointer-events: none;
     transform: scale(1.1);
   }
-
   .top-header {
     background-color: white;
-    padding: 20px 40px;
+    padding: 15px 25px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -46,14 +45,30 @@
   }
 
   .logo {
-    font-weight: 700;
-    font-size: 28px;
+    font-weight: 600;
+    font-size: 20px;
     color: black;
     text-decoration: none;
+    position: relative;
+  }
+
+  .logo::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: black;
+    transition: width 0.3s ease;
+  }
+
+  .logo:hover::after {
+    width: 100%;
   }
 
   .menu-toggle {
-    font-size: 32px;
+    font-size: 28px;
     cursor: pointer;
     background: none;
     border: none;
@@ -63,28 +78,35 @@
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 80px;
-    right: 40px;
-    background-color: white;
-    padding: 20px 30px;
-    border-radius: 10px;
+    top: 70px;
+    right: 20px;
+    background-color: #fff;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-    min-width: 220px;
+    border-radius: 12px;
+    padding: 15px 25px;
+    min-width: 180px;
+    animation: dropdownFade 0.3s ease;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #222;
+    font-size: 16px;
+    margin: 8px 0;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: #555;
   }
 
   .nav-links.active {
     display: flex;
   }
 
-  .nav-links a {
-    font-size: 20px;
-    text-decoration: none;
-    color: #222;
-    margin: 12px 0;
-  }
-
-  .nav-links a:hover {
-    color: #666;
+  @keyframes dropdownFade {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .content-wrapper {
