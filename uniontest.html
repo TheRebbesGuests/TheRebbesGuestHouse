@@ -6,7 +6,6 @@
   <title>The Union House – The Rebbe’s Guesthouse</title>
   <link rel="icon" href="favicon.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,200&display=swap" rel="stylesheet">
-
 <style>
   * {
     box-sizing: border-box;
@@ -124,12 +123,20 @@
     background-color: #333;
   }
 
+  .scroll-gallery-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+
   .scroll-gallery {
     display: flex;
     overflow-x: auto;
-    padding: 40px 20px;
     gap: 30px;
     scroll-snap-type: x mandatory;
+    padding: 20px 0;
+    max-width: 100%;
+    scroll-padding: 20px;
   }
 
   .scroll-gallery::-webkit-scrollbar {
@@ -143,6 +150,7 @@
 
   .gallery-item {
     min-width: 280px;
+    max-width: 320px;
     flex-shrink: 0;
     scroll-snap-align: start;
     text-align: center;
@@ -218,22 +226,57 @@
   }
 
   @media (max-width: 768px) {
-    .details-box h1 { font-size: 36px; }
-    .details-box p { font-size: 18px; }
-    .book-button { font-size: 16px; padding: 12px 28px; }
+    body {
+      font-size: 18px;
+      line-height: 1.7;
+      padding: 0 15px;
+    }
+
+    .top-header {
+      padding: 15px 20px;
+    }
+
+    .logo {
+      font-size: 22px;
+    }
+
+    .details-box h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .details-box p {
+      font-size: 17px;
+      margin-bottom: 20px;
+    }
+
+    .book-button {
+      font-size: 16px;
+      padding: 10px 24px;
+    }
+
+    .content-wrapper {
+      padding: 60px 20px 30px;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .scroll-gallery-wrapper {
+      padding: 0;
+    }
 
     .scroll-gallery {
+      padding: 0 10px;
       gap: 20px;
-      padding: 30px 10px;
     }
 
     .gallery-item {
-      min-width: 100%;
-      flex: 0 0 100%;
+      min-width: 90%;
+      max-width: 90%;
+      margin: 0 auto;
     }
 
     .gallery-item img {
-      width: 100%;
       height: auto;
     }
 
@@ -241,12 +284,24 @@
       font-size: 18px;
       margin-top: 8px;
     }
+
+    .calendar-rules-section {
+      padding: 20px 15px;
+    }
+
+    .calendar-container {
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .rules-box {
+      font-size: 18px;
+      padding: 20px;
+    }
   }
 </style>
 
-
 </head>
-
 <body>
   <nav class="top-header">
     <a href="index.html" class="logo">The Rebbe’s GuestHouse</a>
@@ -273,16 +328,18 @@
     </div>
   </section>
 
-  <section class="scroll-gallery">
-    <div class="gallery-item"><img src="union_1.jpg" alt="Living Room"><p>Living Room</p></div>
-    <div class="gallery-item"><img src="union_2.jpg" alt="Dining Area"><p>Dining Area</p></div>
-    <div class="gallery-item"><img src="union_3.jpg" alt="Bedroom 1"><p>Bedroom 1</p></div>
-    <div class="gallery-item"><img src="union_4.jpg" alt="Bedroom 2"><p>Bedroom 2</p></div>
-    <div class="gallery-item"><img src="union_5.jpg" alt="Bedroom 3"><p>Bedroom 3</p></div>
-    <div class="gallery-item"><img src="union_6.jpg" alt="Bedroom 4"><p>Bedroom 4</p></div>
-    <div class="gallery-item"><img src="union_7.jpg" alt="Basement Suite"><p>Basement Suite</p></div>
-    <div class="gallery-item"><img src="union_8.jpg" alt="Kitchen"><p>Kitchen</p></div>
-  </section>
+  <div class="scroll-gallery-wrapper">
+    <div class="scroll-gallery">
+      <div class="gallery-item"><img src="union_1.jpg" alt="Living Room"><p>Living Room</p></div>
+      <div class="gallery-item"><img src="union_2.jpg" alt="Dining Area"><p>Dining Area</p></div>
+      <div class="gallery-item"><img src="union_3.jpg" alt="Bedroom 1"><p>Bedroom 1</p></div>
+      <div class="gallery-item"><img src="union_4.jpg" alt="Bedroom 2"><p>Bedroom 2</p></div>
+      <div class="gallery-item"><img src="union_5.jpg" alt="Bedroom 3"><p>Bedroom 3</p></div>
+      <div class="gallery-item"><img src="union_6.jpg" alt="Bedroom 4"><p>Bedroom 4</p></div>
+      <div class="gallery-item"><img src="union_7.jpg" alt="Basement Suite"><p>Basement Suite</p></div>
+      <div class="gallery-item"><img src="union_8.jpg" alt="Kitchen"><p>Kitchen</p></div>
+    </div>
+  </div>
 
   <section class="calendar-rules-section">
     <h2>Availability & House Rules</h2>
@@ -290,7 +347,6 @@
       <iframe 
         src="https://calendar.google.com/calendar/embed?src=6d6ebb70289a02589f68d41d8ec0d7ac3c2d1fd8db0522bfefe66c3b41d70343%40group.calendar.google.com&ctz=America%2FNew_York">
       </iframe>
-
       <div class="rules-box">
         <h3>House Rules</h3>
         <ul>
@@ -305,10 +361,3 @@
 </body>
 </html>
 
-
-
-
-  </section>
-
-</body>
-</html>
