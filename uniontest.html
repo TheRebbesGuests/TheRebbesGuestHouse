@@ -7,7 +7,7 @@
   <link rel="icon" href="favicon.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,200&display=swap" rel="stylesheet">
 
- <style>
+<style>
   * {
     box-sizing: border-box;
     font-family: 'Fraunces', serif;
@@ -34,7 +34,6 @@
     transform: scale(1.1);
   }
 
-  /* ==== Header ==== */
   .top-header {
     background-color: white;
     padding: 20px 40px;
@@ -89,7 +88,6 @@
     color: #666;
   }
 
-  /* ==== Main Content ==== */
   .content-wrapper {
     padding: 80px 30px 40px;
     max-width: 1100px;
@@ -126,7 +124,6 @@
     background-color: #333;
   }
 
-  /* ==== Scroll Gallery ==== */
   .scroll-gallery {
     display: flex;
     overflow-x: auto;
@@ -167,7 +164,6 @@
     text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
   }
 
-  /* ==== Calendar & Rules ==== */
   .calendar-rules-section {
     margin-top: 80px;
     padding: 40px;
@@ -221,52 +217,33 @@
     line-height: 1.8;
   }
 
-  /* ==== Mobile Adjustments ==== */
-@media (max-width: 768px) {
-  .details-box h1 {
-    font-size: 32px;
-  }
+  @media (max-width: 768px) {
+    .details-box h1 { font-size: 36px; }
+    .details-box p { font-size: 18px; }
+    .book-button { font-size: 16px; padding: 12px 28px; }
 
-  .details-box p {
-    font-size: 16px;
-  }
+    .scroll-gallery {
+      gap: 20px;
+      padding: 30px 10px;
+    }
 
-  .book-button {
-    font-size: 16px;
-    padding: 12px 24px;
-  }
+    .gallery-item {
+      min-width: 100%;
+      flex: 0 0 100%;
+    }
 
-  .scroll-gallery {
-    padding-left: 10px;
-    padding-right: 10px;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    scroll-snap-type: x mandatory;
-  }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+    }
 
-  .gallery-item {
-    min-width: 200px;
-    max-width: 220px;
-    flex: 0 0 auto;
-    scroll-snap-align: start;
+    .gallery-item p {
+      font-size: 18px;
+      margin-top: 8px;
+    }
   }
-
-  .gallery-item img {
-    width: 100%;
-    max-height: 140px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-
-  .gallery-item p {
-    font-size: 16px;
-    margin-top: 6px;
-    color: white;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-  }
-}
-
 </style>
+
 
 </head>
 
