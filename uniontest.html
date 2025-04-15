@@ -155,43 +155,66 @@
       border-radius: 12px;
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
     }
-    .room-label {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 600;
-  margin-top: 10px;
-  color: white;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
-}
-
 
     .gallery-item p {
       margin-top: 10px;
-      font-size: 16px;
-      color: #333;
+      font-size: 20px;
+      font-weight: 600;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
     }
 
-    .calendar-section {
-      padding: 80px 20px;
+    .calendar-rules-section {
+      margin-top: 80px;
+      padding: 40px;
+    }
+
+    .calendar-rules-section h2 {
       text-align: center;
-      background: rgba(255, 255, 255, 0.9);
-      margin: 0 auto;
-      border-radius: 16px;
-      max-width: 1100px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-    }
-
-    .calendar-section h2 {
       font-size: 36px;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
     }
 
-    iframe {
-      border: 0;
-      width: 100%;
-      max-width: 900px;
-      height: 600px;
+    .calendar-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .calendar-container iframe {
+      flex: 1 1 500px;
+      min-width: 300px;
+      height: 500px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .rules-box {
+      flex: 1 1 400px;
+      min-width: 280px;
+      background: rgba(255,255,255,0.95);
+      padding: 30px 25px;
       border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      font-size: 20px;
+    }
+
+    .rules-box h3 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .rules-box ul {
+      list-style: none;
+      padding-left: 0;
+      line-height: 1.8;
     }
 
     @media (max-width: 768px) {
@@ -199,7 +222,38 @@
       .details-box p { font-size: 18px; }
       .book-button { font-size: 16px; padding: 12px 28px; }
       .gallery-item { min-width: 240px; }
+    
     }
+    @media (max-width: 768px) {
+  .scroll-gallery {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .gallery-item {
+    min-width: 260px;
+    margin-right: 20px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .gallery-item p {
+    font-size: 18px;
+    margin-top: 8px;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+  }
+}
+
   </style>
 </head>
 
@@ -240,34 +294,26 @@
     <div class="gallery-item"><img src="union_8.jpg" alt="Kitchen"><p>Kitchen</p></div>
   </section>
 
-<section class="calendar-rules-section" style="margin-top: 80px; padding: 40px;">
-  <h2 style="text-align:center; font-size: 36px; margin-bottom: 40px;">Availability & House Rules</h2>
-
-  <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; max-width: 1200px; margin: 0 auto;">
-    
-    <!-- Calendar -->
-    <div style="flex: 1 1 500px; min-width: 300px;">
+  <section class="calendar-rules-section">
+    <h2>Availability & House Rules</h2>
+    <div class="calendar-container">
       <iframe 
-        src="https://calendar.google.com/calendar/embed?src=6d6ebb70289a02589f68d41d8ec0d7ac3c2d1fd8db0522bfefe66c3b41d70343%40group.calendar.google.com&ctz=America%2FNew_York"
-        style="border: 0; width: 100%; height: 500px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" 
-        frameborder="0" 
-        scrolling="no">
+        src="https://calendar.google.com/calendar/embed?src=6d6ebb70289a02589f68d41d8ec0d7ac3c2d1fd8db0522bfefe66c3b41d70343%40group.calendar.google.com&ctz=America%2FNew_York">
       </iframe>
-    </div>
 
-    <!-- House Rules -->
-    <div style="flex: 1 1 400px; min-width: 280px; background: rgba(255,255,255,0.95); padding: 30px 25px; border-radius: 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.1); font-size: 20px;">
-      <h3 style="text-align: center; font-size: 28px; margin-bottom: 20px;">House Rules</h3>
-      <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
-        <li>🚭 <strong>No smoking</strong> anywhere on the premises</li>
-        <li>🚫 <strong>No alcohol</strong> permitted</li>
-        <li>🕰 Check-in is by 12:00 PM</li>
-        <li>🕰 Check-out is by 11:00 AM</li>
-      </ul>
+      <div class="rules-box">
+        <h3>House Rules</h3>
+        <ul>
+          <li>🚭 <strong>No smoking</strong> anywhere on the premises</li>
+          <li>🚫 <strong>No alcohol</strong> permitted</li>
+          <li>🕰 Check-in is by 12:00 PM</li>
+          <li>🕰 Check-out is by 11:00 AM</li>
+        </ul>
+      </div>
     </div>
-
-  </div>
-</section>
+  </section>
+</body>
+</html>
 
 
 
