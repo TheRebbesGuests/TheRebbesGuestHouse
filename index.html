@@ -23,50 +23,40 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,200&display=swap" rel="stylesheet">
 <style>
-  <style>
   html {
     scroll-behavior: smooth;
   }
-  /* ====== Base ====== */
-body {
-  font-family: 'Fraunces', serif;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
 
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background: url('brick-wall.jpg') center center / cover no-repeat;
-  z-index: -1;
-  pointer-events: none;
-  transform: scale(1.1);
-  will-change: transform;
-}
-
-@media (max-width: 768px) {
-  body::before {
-    background-position: center top;
-    transform: scale(1); /* Less zoom on mobile */
+  body {
+    font-family: 'Fraunces', serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
   }
-}
 
-
-@media (max-width: 768px) {
   body::before {
-    background-position: center top;
-    background-size: cover;
-    transform: scale(1.0); /* Less zoom on mobile */
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: url('brick-wall.jpg') center center / cover no-repeat;
+    z-index: -1;
+    pointer-events: none;
+    transform: scale(1.1);
+    will-change: transform;
   }
-}
 
+  @media (max-width: 768px) {
+    body::before {
+      background-position: center top;
+      background-size: cover;
+      transform: scale(1);
+    }
+  }
 
   h1 {
     font-size: 48px;
@@ -85,7 +75,6 @@ body::before {
     transform: none;
   }
 
-  /* ====== Header ====== */
   header {
     position: relative;
     height: 90vh;
@@ -94,8 +83,6 @@ body::before {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    margin-bottom: 0;
-    padding-bottom: 0;
   }
 
   .overlay {
@@ -104,91 +91,88 @@ body::before {
     padding: 40px 30px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 90%;
     max-width: 700px;
     text-align: center;
-    margin-bottom: 0;
   }
 
-  /* ====== Top Header Nav ====== */
-.top-header {
-  background-color: white;
-  padding: 15px 25px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-}
+  .top-header {
+    background-color: white;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  }
 
-.logo {
-  font-weight: 600;
-  font-size: 20px;
-  color: black;
-  text-decoration: none;
-  position: relative;
-}
+  .logo {
+    font-weight: 600;
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    position: relative;
+  }
 
-.logo::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: black;
-  transition: width 0.3s ease;
-}
+  .logo::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: black;
+    transition: width 0.3s ease;
+  }
 
-.logo:hover::after {
-  width: 100%;
-}
+  .logo:hover::after {
+    width: 100%;
+  }
 
-.menu-toggle {
-  font-size: 28px;
-  cursor: pointer;
-  background: none;
-  border: none;
-}
+  .menu-toggle {
+    font-size: 28px;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
 
-.nav-links {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 70px;
-  right: 20px;
-  background-color: #fff;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  border-radius: 12px;
-  padding: 15px 25px;
-  min-width: 180px;
-  animation: dropdownFade 0.3s ease;
-}
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: #fff;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    padding: 15px 25px;
+    min-width: 180px;
+    animation: dropdownFade 0.3s ease;
+  }
 
-.nav-links a {
-  text-decoration: none;
-  color: #222;
-  font-size: 16px;
-  margin: 8px 0;
-  transition: color 0.3s;
-}
+  .nav-links a {
+    text-decoration: none;
+    color: #222;
+    font-size: 16px;
+    margin: 8px 0;
+    transition: color 0.3s;
+  }
 
-.nav-links a:hover {
-  color: #555;
-}
+  .nav-links a:hover {
+    color: #555;
+  }
 
-.nav-links.active {
-  display: flex;
-}
+  .nav-links.active {
+    display: flex;
+  }
 
-@keyframes dropdownFade {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+  @keyframes dropdownFade {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-
-  /* ====== CTA Button ====== */
   .cta-button {
     background: none;
     color: black;
@@ -227,15 +211,11 @@ body::before {
     width: 100%;
   }
 
-  /* ====== Section Titles ====== */
   .property-section-title {
     font-size: 64px;
     color: white;
     margin: 30px auto 40px;
-    font-family: 'Fraunces', serif;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-    padding-top: 0;
-    position: relative;
     text-align: center;
   }
 
@@ -249,7 +229,6 @@ body::before {
     border-radius: 2px;
   }
 
-  /* ====== Property Showcase ====== */
   .property-showcase {
     padding: 40px 20px 80px;
     text-align: center;
@@ -286,7 +265,6 @@ body::before {
     padding: 15px;
     font-size: 18px;
     text-align: center;
-    font-family: 'Fraunces', serif;
   }
 
   .property-card:hover {
@@ -294,7 +272,6 @@ body::before {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   }
 
-  /* ====== Testimonials ====== */
   .testimonials-section {
     margin-top: 100px;
     padding: 100px 30px;
@@ -318,7 +295,6 @@ body::before {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     font-size: 18px;
     line-height: 1.6;
-    font-family: 'Fraunces', serif;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     backdrop-filter: blur(4px);
   }
@@ -338,10 +314,8 @@ body::before {
     color: #444;
   }
 
-  /* ====== Contact Section ====== */
   .contact-section {
     padding: 80px 30px;
-    font-family: 'Fraunces', serif;
     color: white;
   }
 
@@ -385,7 +359,6 @@ body::before {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   }
 
-  /* ====== Media Queries ====== */
   @media (min-width: 600px) {
     .property-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -409,6 +382,7 @@ body::before {
     }
   }
 </style>
+
 
 </head>
   <script>
