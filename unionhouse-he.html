@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>בית יוניון – אצלהרבי</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      font-family: 'Assistant', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background: url('brick-wall.jpg') center center / cover no-repeat;
+      z-index: -1;
+      pointer-events: none;
+      transform: scale(1.1);
+      will-change: transform;
+    }
+
+    @media (max-width: 768px) {
+      body::before {
+        transform: scale(1);
+        background-position: center top;
+      }
+    }
+
+    .top-header {
+      background-color: white;
+      padding: 15px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 20px;
+      color: black;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .logo::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      right: 0;
+      width: 0;
+      height: 2px;
+      background: black;
+      transition: width 0.3s ease;
+    }
+
+    .logo:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      font-size: 28px;
+      cursor: pointer;
+      display: block;
+      background: none;
+      border: none;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      left: 20px;
+      background-color: #fff;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      border-radius: 12px;
+      padding: 15px 25px;
+      min-width: 180px;
+      animation: dropdownFade 0.3s ease;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #222;
+      font-size: 16px;
+      margin: 8px 0;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #555;
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    @keyframes dropdownFade {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      padding: 100px 30px;
+    }
+
+    .details-box {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      max-width: 500px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .details-box h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .details-box p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .book-button {
+      margin-top: 30px;
+      padding: 12px 30px;
+      background-color: #000;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s;
+    }
+
+    .book-button:hover {
+      background-color: #333;
+    }
+
+    .gallery-scroll {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-height: 600px;
+      overflow-y: auto;
+    }
+
+    .gallery-scroll img {
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-header">
+    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
+    <a href="index-he.html" class="logo">אצל הרבי</a>
+    <div class="nav-links">
+      <a href="index-he.html">דף הבית</a>
+      <a href="index-he.html#contact">צור קשר</a>
+      <a href="index-he.html#testimonials">המלצות</a>
+      <a href="unionhouse-he.html">בית יוניון</a>
+      <a href="lincoln32-he.html">לינקולן 42</a>
+      <a href="lincoln34-he.html">לינקולן 44</a>
+      <a href="transportation-he.html">הסעות</a>
+      <a href="booking-he.html">הזמן עכשיו</a>
+    </div>
+  </nav>
+
+  <section class="content-wrapper">
+    <div class="details-box">
+      <h1>בית יוניון</h1>
+      <p>
+        ממוקם במרחק צעדים ספורים מ-770, בית יוניון הוא אחד מהבתים המרווחים והנוחים ביותר שלנו. הוא מתאים לעד <strong>25 אורחים</strong>, מושלם למשפחות גדולות או קבוצות המעוניינות לשהות יחד בשבת באווירה חסידית וחמה.
+      </p>
+      <p>
+        הבית כולל <em>(נא לעדכן מספר חדרים ושירותים)</em>, מטבח כשר מלא ומרתף מרוהט. הבית מצויד במצעים, מגבות ופריטי שבת חיוניים כגון פלטה ומיחם. המיקום נוח ליד בתי כנסת וחנויות מקומיות.
+      </p>
+      <p>
+        קיימת אפשרות להזמין רק את <strong>יחידת המרתף</strong>, המתאימה לעד <strong>4 אורחים</strong> – פתרון מושלם לקבוצות קטנות או לאורחים עם תקציב נמוך יותר.
+      </p>
+      <p>
+        אנו שואפים לגרום לכם להרגיש בבית – בין אם אתם באים לאירוע, שבתון או פשוט לשהות בשכונת הרבי.
+      </p>
+      <a href="booking-he.html?room=unionhouse" class="book-button">הזמן עכשיו</a>
+    </div>
+
+    <div class="gallery-scroll">
+      <img src="union_1.jpg" alt="סלון">
+      <img src="union_2.jpg" alt="פינת אוכל">
+      <img src="union_3.jpg" alt="חדר שינה">
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
