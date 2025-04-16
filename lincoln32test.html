@@ -282,29 +282,20 @@
     padding: 12px 28px;
   }
 
-  .rooms-section {
-    padding: 40px 10px 50px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-
   .scroll-gallery {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scroll-padding: 0 12vw;
+    padding: 30px 0;
     gap: 20px;
-    padding: 30px 12vw; /* makes first/last item centered */
     justify-content: flex-start;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .scroll-gallery::-webkit-scrollbar {
-    display: none; /* Optional: hide scrollbar */
   }
 
   .gallery-item {
-    flex: 0 0 76vw; /* ensures 1 item fits */
+    flex: 0 0 76vw; /* Show one item centered */
     scroll-snap-align: center;
+    margin: 0 auto;
   }
 
   .gallery-item img {
