@@ -287,20 +287,26 @@
     margin-top: 50px;
     margin-bottom: 50px;
   }
+
   .scroll-gallery {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scroll-padding: 0 12vw; /* Important for starting centered */
+    scroll-padding-left: 12vw; /* Padding to start centered */
+    scroll-padding-right: 12vw;
     padding: 30px 0;
     gap: 20px;
     justify-content: flex-start;
+    -webkit-overflow-scrolling: touch; /* smooth iOS */
+  }
+
+  .scroll-gallery::-webkit-scrollbar {
+    display: none; /* optional: hide scrollbar */
   }
 
   .gallery-item {
-    flex: 0 0 76vw; /* One item at a time, with room for margins */
-    scroll-snap-align: center; /* This is the magic */
-    margin: 0 auto;
+    flex: 0 0 76vw;
+    scroll-snap-align: center;
   }
 
   .gallery-item img {
@@ -319,6 +325,7 @@
     text-align: center;
   }
 }
+
 </style>
 
 </head>
