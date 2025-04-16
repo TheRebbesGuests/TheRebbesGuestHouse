@@ -287,19 +287,19 @@
     margin-top: 50px;
     margin-bottom: 50px;
   }
-
   .scroll-gallery {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    padding: 20px;
+    scroll-padding: 0 12vw; /* Important for starting centered */
+    padding: 30px 0;
     gap: 20px;
     justify-content: flex-start;
   }
 
   .gallery-item {
-    flex: 0 0 calc(100vw - 60px); /* smaller than screen width */
-    scroll-snap-align: center;
+    flex: 0 0 76vw; /* One item at a time, with room for margins */
+    scroll-snap-align: center; /* This is the magic */
     margin: 0 auto;
   }
 
@@ -319,11 +319,6 @@
     text-align: center;
   }
 }
-
-  }
-}
-
-
 </style>
 
 </head>
