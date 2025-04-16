@@ -268,42 +268,53 @@
     line-height: 1.8;
   }
 
-  @media (max-width: 768px) {
-    .details-box h1 { font-size: 36px; }
-    .details-box p { font-size: 18px; }
-    .book-button { font-size: 16px; padding: 12px 28px; }
-
-    .rooms-section {
-      padding: 40px 10px 50px;
-      margin-top: 50px;
-      margin-bottom: 50px;
-    }
-
-    .scroll-gallery {
-      overflow-x: scroll;
-      flex-wrap: nowrap;
-      scroll-snap-type: x mandatory;
-      gap: 20px;
-      padding: 30px 0;
-      justify-content: flex-start;
-    }
-
-    .gallery-item {
-      flex: 0 0 85%;
-      scroll-snap-align: center;
-      margin: 0 auto;
-    }
-
-    .gallery-item img {
-      height: auto;
-      width: 100%;
-    }
-
-    .gallery-item p {
-      font-size: 18px;
-      margin-top: 10px;
-    }
+ @media (max-width: 768px) {
+  .details-box h1 {
+    font-size: 36px;
   }
+
+  .details-box p {
+    font-size: 18px;
+  }
+
+  .book-button {
+    font-size: 16px;
+    padding: 12px 28px;
+  }
+
+  .rooms-section {
+    padding: 40px 10px 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .scroll-gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 10px;
+    gap: 0;
+    padding: 10px 0;
+  }
+
+  .gallery-item {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .gallery-item p {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+}
+
 </style>
 
 </head>
