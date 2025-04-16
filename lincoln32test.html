@@ -144,17 +144,25 @@
     .book-button:hover {
       background-color: #333;
     }
-.rooms-section {
-  padding: 60px 20px 80px;
-  text-align: center;
-}
-
-.rooms-heading {
+.section-title {
   font-size: 42px;
   color: white;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+  display: inline-block;
   margin-bottom: 40px;
 }
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: white;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
 
     .scroll-gallery {
       display: flex;
@@ -287,7 +295,7 @@
     </div>
   </section>
 <section class="rooms-section">
-  <h2 class="rooms-heading">Our Rooms</h2>
+  <h2 class="section-title">Our Room's</h2>
   <div class="scroll-gallery">
     <div class="gallery-item"><img src="union_1.jpg" alt="Living Room"><p>Living Room</p></div>
     <div class="gallery-item"><img src="union_2.jpg" alt="Dining Area"><p>Dining Area</p></div>
