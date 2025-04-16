@@ -292,16 +292,15 @@
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    padding: 20px 0;
-    gap: 0;
+    padding: 20px;
+    gap: 20px;
+    justify-content: flex-start;
   }
 
   .gallery-item {
-    flex: 0 0 90vw; /* limits width to 90% of viewport */
-    max-width: 90vw;
+    flex: 0 0 calc(100vw - 60px); /* smaller than screen width */
     scroll-snap-align: center;
     margin: 0 auto;
-    padding: 0;
   }
 
   .gallery-item img {
@@ -317,6 +316,10 @@
     margin-top: 10px;
     color: white;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    text-align: center;
+  }
+}
+
   }
 }
 
