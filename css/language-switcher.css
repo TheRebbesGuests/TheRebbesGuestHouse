@@ -31,28 +31,30 @@ html[dir="rtl"] .language-switcher {
   margin-left: 0;
 }
 
-/* Medium screen (mobile/tablet) adjustments */
+/* MOBILE STYLE */
 @media (max-width: 768px) {
   .language-switcher {
     position: absolute;
     top: 15px;
-    right: 55px; /* moved slightly to the left */
-    flex-wrap: wrap;
-    gap: 5px;
+    right: 25px; /* moved more left */
+    flex-direction: column; /* vertical layout */
+    align-items: flex-end;
+    gap: 3px; /* closer spacing */
   }
 
   html[dir="rtl"] .language-switcher {
-    left: 55px;
+    left: 25px;
     right: auto;
+    align-items: flex-start;
   }
 
   .lang-switch {
-    padding: 0;
     width: 30px;
     height: 30px;
-    font-size: 13px;
-    text-align: center;
+    padding: 0;
+    font-size: 12px;
     line-height: 30px;
-    border-radius: 6px; /* more square */
+    text-align: center;
+    border-radius: 6px;
   }
 }
