@@ -36,15 +36,20 @@ html[dir="rtl"] .language-switcher {
     position: absolute;
     top: 15px;
     right: 70px;
+    flex-wrap: wrap;
+    gap: 5px;
   }
-  
+
   html[dir="rtl"] .language-switcher {
     left: 70px;
     right: auto;
   }
-  
+
   .lang-switch {
-    padding: 3px 6px;
-    font-size: 12px;
+    padding: 5px 8px;
+    font-size: 13px;
+  }
+}
+
   }
 }
