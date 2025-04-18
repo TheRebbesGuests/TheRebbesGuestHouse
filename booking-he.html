@@ -3,11 +3,11 @@
 <html lang="he" dir="rtl">
 <head>
   <link rel="stylesheet" href="css/language-switcher.css">
-  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="icon" href="favicon.png" type="image/png" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>הזמן עכשיו – בית ההארחה של אורחי הרבי</title>
-   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,200&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -43,40 +43,36 @@
     }
 
  .top-header {
-  background-color: white;
-  padding: 15px 25px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-}
-
-.logo {
-  font-weight: 600;
-  font-size: 20px;
-  color: black;
-  text-decoration: none;
-  position: relative;
-}
-
-.logo::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: black;
-  transition: width 0.3s ease;
-}
-
-.logo:hover::after {
-  width: 100%;
-}
-
+      background-color: white;
+      padding: 15px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+    .logo {
+      font-weight: 600;
+      font-size: 20px;
+      color: black;
+      text-decoration: none;
+      position: relative;
+    }
+    .logo::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: black;
+      transition: width 0.3s ease;
+    }
+    .logo:hover::after {
+      width: 100%;
+    }
 .menu-toggle {
   font-size: 28px;
   cursor: pointer;
@@ -84,42 +80,59 @@
   border: none;
 }
 
-.nav-links {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 70px;
-  right: 20px;
-  background-color: #fff;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  border-radius: 12px;
-  padding: 15px 25px;
-  min-width: 180px;
-  animation: dropdownFade 0.3s ease;
-}
+.menu-toggle {
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      left: 20px;
+      background-color: #fff;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      border-radius: 12px;
+      padding: 15px 25px;
+      min-width: 180px;
+      animation: dropdownFade 0.3s ease;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #222;
+      font-size: 16px;
+      margin: 8px 0;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: #555; }
+    .nav-links.active { display: flex; }
 
-.nav-links a {
-  text-decoration: none;
-  color: #222;
-  font-size: 16px;
-  margin: 8px 0;
-  transition: color 0.3s;
-}
+    @keyframes dropdownFade {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+     .language-switcher {
+      display: flex;
+      gap: 10px;
+      margin-left: 20px;
+    }
 
-.nav-links a:hover {
-  color: #555;
-}
+    .lang-switch {
+      border: 1px solid #ccc;
+      padding: 4px 8px;
+      font-size: 12px;
+      background: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
 
-.nav-links.active {
-  display: flex;
-}
-
-@keyframes dropdownFade {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-
+    .lang-switch.active-lang {
+      background-color: black;
+      color: white;
+      border-color: black;
+    }
 
     .form-container {
       background: rgba(255, 255, 255, 0.96);
