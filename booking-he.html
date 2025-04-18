@@ -127,11 +127,20 @@
       from { opacity: 0; transform: translateY(-10px); }
       to { opacity: 1; transform: translateY(0); }
     }
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 12px;
+}
+
+/* RTL adjustment */
 html[dir="rtl"] .language-switcher {
   margin-right: 20px;
   margin-left: 0;
 }
 
+/* Mobile layout */
 @media (max-width: 500px) {
   .language-switcher {
     flex-direction: column;
@@ -149,28 +158,22 @@ html[dir="rtl"] .language-switcher {
   }
 }
 
-
-  html[dir="rtl"] .language-switcher {
-    align-items: flex-start;
-    left: 15px;
-    right: auto;
-  }
+.lang-switch {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  color: black; /* <-- this makes text visible */
+  cursor: pointer;
+  font-family: 'Assistant', sans-serif;
 }
 
-    .lang-switch {
-      border: 1px solid #ccc;
-      padding: 4px 8px;
-      font-size: 12px;
-      background: none;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-
-    .lang-switch.active-lang {
-      background-color: black;
-      color: white;
-      border-color: black;
-    }
+.lang-switch.active-lang {
+  background-color: black;
+  color: white;
+  border-color: black;
+}
 
     .form-container {
       background: rgba(255, 255, 255, 0.96);
