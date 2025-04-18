@@ -2,13 +2,12 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <link rel="stylesheet" href="css/language-switcher.css">
   <link rel="icon" href="favicon.png" type="image/png" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>הזמן עכשיו – בית ההארחה של אורחי הרבי</title>
   <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&display=swap" rel="stylesheet">
-
+ <link rel="stylesheet" href="css/language-switcher.css">
   <style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -149,7 +148,16 @@ html[dir="rtl"] .language-switcher {
     right: auto;
   }
 }
-.lang-switch {
+
+
+  html[dir="rtl"] .language-switcher {
+    align-items: flex-start;
+    left: 15px;
+    right: auto;
+  }
+}
+
+    .lang-switch {
       border: 1px solid #ccc;
       padding: 4px 8px;
       font-size: 12px;
@@ -163,6 +171,7 @@ html[dir="rtl"] .language-switcher {
       color: white;
       border-color: black;
     }
+
     .form-container {
       background: rgba(255, 255, 255, 0.96);
       padding: 40px;
