@@ -57,7 +57,7 @@
 .top-header a,
 .language-switcher,
 .lang-switch {
-   font-family: 'Assistant', sans-serif;serif;
+   font-family: 'Assistant', sans-serif;
 }
 
     .logo {
@@ -159,13 +159,16 @@ html[dir="rtl"] .language-switcher {
 }
 
 .lang-switch {
-  background: none;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 4px 8px;
+  padding: 0;
+  width: 30px;
+  height: 30px;
   font-size: 12px;
-  color: black; /* <-- this makes text visible */
+  background: none;
   cursor: pointer;
+  border-radius: 4px;
+  line-height: 30px; /* Center the text vertically */
+  text-align: center;
   font-family: 'Assistant', sans-serif;
 }
 
