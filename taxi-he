@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>שירותי הסעות – אורחי הרבי</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,200&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/language-switcher.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Fraunces', serif;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background: url('brick-wall.jpg') center center / cover no-repeat;
+      z-index: -1;
+      pointer-events: none;
+      transform: scale(1.1);
+    }
+
+    .top-header {
+      background-color: white;
+      padding: 15px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 20px;
+      color: black;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .menu-toggle {
+      font-size: 28px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      left: 20px;
+      background-color: #fff;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      border-radius: 12px;
+      padding: 15px 25px;
+      min-width: 180px;
+      animation: dropdownFade 0.3s ease;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #222;
+      font-size: 16px;
+      margin: 8px 0;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: #555; }
+    .nav-links.active { display: flex; }
+
+    @keyframes dropdownFade {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .language-switcher {
+      display: flex;
+      gap: 10px;
+      margin-left: 20px;
+    }
+
+    .lang-switch {
+      border: 1px solid #ccc;
+      padding: 4px 8px;
+      font-size: 12px;
+      background: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .lang-switch.active-lang {
+      background-color: black;
+      color: white;
+      border-color: black;
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      padding: 100px 30px;
+    }
+
+    .details-box {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      max-width: 500px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      flex: 1 1 400px;
+    }
+
+    .details-box h1 {
+      font-size: 36px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .details-box p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .cta-button {
+      margin-top: 30px;
+      padding: 12px 30px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .transport-image {
+      flex: 1 1 400px;
+      max-width: 450px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .transport-image img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .transport-image img:hover {
+      transform: scale(1.03);
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 768px) {
+      .content-wrapper {
+        flex-direction: column;
+        padding: 60px 20px;
+      }
+
+      .transport-image {
+        max-width: 90%;
+        margin-top: 20px;
+      }
+
+      .details-box {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="top-header">
+    <a href="index-he.html" class="logo">אורחי הרבי</a>
+    <div class="language-switcher">
+      <button class="lang-switch" data-lang="en">EN</button>
+      <button class="lang-switch" data-lang="fr">FR</button>
+      <button class="lang-switch active-lang" data-lang="he">HE</button>
+    </div>
+    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
+    <div class="nav-links">
+      <a href="index-he.html">דף הבית</a>
+      <a href="index-he.html#testimonials">המלצות</a>
+      <a href="index-he.html#contact">צור קשר</a>
+      <a href="unionhouse-he.html">בית יוניון</a>
+      <a href="lincoln32-he.html">לינקולן 42</a>
+      <a href="lincoln34-he.html">לינקולן 44</a>
+      <a href="taxi-he.html">הסעות</a>
+      <a href="booking-he.html">הזמן עכשיו</a>
+    </div>
+  </nav>
+
+  <section class="content-wrapper fade-in">
+    <div class="details-box">
+      <h1>שירותי הסעות</h1>
+      <p>אנו מציעים שירות הסעות אמין ונוח לאורחינו. קיימות נסיעות מ/אל שדות התעופה JFK, LaGuardia, Newark ולציון באוהל בקווינס.</p>
+      <p>ההסעה היא אופציונלית וניתן להוסיף אותה להזמנה. אנא ציינו את זמני ההגעה והעזיבה בטופס ההזמנה.</p>
+      <a href="booking-he.html?room=transportation" class="cta-button">הזמן הסעה</a>
+    </div>
+
+    <div class="transport-image">
+      <img src="taxi.jpg" alt="הסעת אורחים">
+    </div>
+  </section>
+
+  <script src="js/language-switcher.js"></script>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    });
+
+    faders.forEach(fade => observer.observe(fade));
+  </script>
+
+  <script>
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.remove('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
