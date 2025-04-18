@@ -7,13 +7,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>הזמן עכשיו – בית ההארחה של אורחי הרבי</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,200&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,200&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Fraunces', serif;
+     font-family: 'Fraunces', serif;
       margin: 0;
       padding: 0;
       position: relative;
@@ -43,7 +43,6 @@
     }
 
  .top-header {
-   direction: ltr;
       background-color: white;
       padding: 15px 25px;
       display: flex;
@@ -218,13 +217,13 @@
 
 <body>
 <nav class="top-header">
+  <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
   <a href="index-he.html" class="logo">בית ההארחה של אורחי הרבי</a>
   <div class="language-switcher">
     <button class="lang-switch" data-lang="en">EN</button>
     <button class="lang-switch" data-lang="fr">FR</button>
     <button class="lang-switch active-lang" data-lang="he">HE</button>
   </div>
-  <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
   <div class="nav-links">
     <a href="index-he.html">דף הבית</a>
     <a href="#testimonials">המלצות</a>
@@ -236,6 +235,8 @@
     <a href="booking-he.html">הזמן עכשיו</a>
   </div>
 </nav>
+
+
   <div class="form-container">
     <h1>הזמן עכשיו</h1>
     <form action="https://usebasin.com/f/754c1ec6ebe3" method="POST">
