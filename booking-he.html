@@ -194,13 +194,18 @@
 </head>
 
 <body>
-  <nav class="top-header">
-    <a href="index-he.html" class="logo">בית ההארחה של אורחי הרבי</a>
-    <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
-    <div class="nav-links">
+ <nav class="top-header">
+  <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
+  <a href="index-he.html" class="logo">בית ההארחה של אורחי הרבי</a>
+  <div class="language-switcher">
+    <button class="lang-switch" data-lang="en">EN</button>
+    <button class="lang-switch" data-lang="fr">FR</button>
+    <button class="lang-switch" data-lang="he">HE</button>
+  </div>
+  <div class="nav-links">
       <a href="index-he.html">דף הבית</a>
-      <a href="index-he.html#testimonials">המלצות</a>
-      <a href="index-he.html#contact">צור קשר</a>
+      <a href="#testimonials">המלצות</a>
+      <a href="#contact">צור קשר</a>
       <a href="unionhouse-he.html">בית יוניון</a>
       <a href="lincoln32-he.html">לינקולן 42</a>
       <a href="lincoln34-he.html">לינקולן 44</a>
@@ -208,7 +213,6 @@
       <a href="booking-he.html">הזמן עכשיו</a>
     </div>
   </nav>
-
   <div class="form-container">
     <h1>הזמן עכשיו</h1>
     <form action="https://usebasin.com/f/754c1ec6ebe3" method="POST">
